@@ -77,6 +77,7 @@ nginx -t
 ```
 
 You can get something like this:
+
 <img width="543" alt="image" src="https://user-images.githubusercontent.com/77183284/231869613-5edbbf0c-61fe-4916-a283-d4d70c9e66b9.png">
 
 To identify if nginx is running, you can use:
@@ -85,6 +86,7 @@ sudo lsof -i | grep nginx
 ```
 
 You will get something like:
+
 <img width="240" alt="image" src="https://user-images.githubusercontent.com/77183284/231870200-dfe05d86-a441-453b-818e-b3485a5e0e8c.png">
 
 To stop nginx(ie. to stop default web port 80)
