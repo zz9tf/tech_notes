@@ -4,7 +4,12 @@ Here is a note for nginx install and usage on mac
 
 ## Install method
 
-Here I used method from [How to Set Up XGINX on Mac for test](https://adamtheautomator.com/nginx-on-mac/)
+A easy way to do so is:
+```
+brew install nginx
+```
+
+Alternative method from [How to Set Up XGINX on Mac for test](https://adamtheautomator.com/nginx-on-mac/)
 
 The terminal script is:
 ```
@@ -52,6 +57,17 @@ sudo nginx
 Now, I can see my local nginx webpage.
 ![image](https://user-images.githubusercontent.com/77183284/231596648-8bd9304a-bbeb-481d-914a-dd6e83342139.png)
 
+
+## Uninstall ngixn
+
+```
+brew uninstall nginx
+```
+If it's not clean enough, try:
+```
+rm -f -R /usr/local/nginx
+rm -f /usr/local/sbin/nginx
+```
 
 ## Usage
 
