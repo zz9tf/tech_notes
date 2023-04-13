@@ -4,6 +4,6 @@ This GitHub repository serves as a comprehensive documentation of my experience 
 
 # Current notes overview
 
-[x] nginx
-[x] ec2+docker
-[] docker
+- [x] ngixn
+- [x] ec2+docker
+- [ ] docker
