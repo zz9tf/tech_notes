@@ -80,6 +80,8 @@ You can get something like this:
 
 <img width="543" alt="image" src="https://user-images.githubusercontent.com/77183284/231869613-5edbbf0c-61fe-4916-a283-d4d70c9e66b9.png">
 
+PS: If you use brew to install nginx, you will find your html folder at: /usr/local/Cellar/nginx/1.23.4/html
+
 To identify if nginx is running, you can use:
 ```
 sudo lsof -i | grep nginx
