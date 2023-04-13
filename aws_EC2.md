@@ -17,3 +17,15 @@ docker-compose version
 You will get:
 
 <img width="277" alt="image" src="https://user-images.githubusercontent.com/77183284/231896125-8f855f51-e883-4c2e-891e-7f038131c9af.png">
+
+
+### Install node
+
+From [link](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install 16
+node -e "console.log('Running Node.js ' + process.version)"
+```
