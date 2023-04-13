@@ -71,29 +71,29 @@ rm -f /usr/local/sbin/nginx
 
 ## Usage
 
-Location of default webpage directory
-
+To see the config location of nginx:
 ```
-/usr/local/nginx/html
-```
-
-Location of config file directory
-
-```
-/usr/local/nginx/conf
+nginx -t
 ```
 
-The useful file for further configuration, which is located at `/usr/local/nginx/conf/nginx.conf`
+You can get something like this:
+<img width="543" alt="image" src="https://user-images.githubusercontent.com/77183284/231869613-5edbbf0c-61fe-4916-a283-d4d70c9e66b9.png">
 
-<img width="182" alt="image" src="https://user-images.githubusercontent.com/77183284/231597395-a307540c-cad7-4599-842e-69182d499166.png">
+To identify if nginx is running, you can use:
+```
+sudo lsof -i | grep nginx
+```
 
-Stop nginx(ie. to stop default web port 80)
+You will get something like:
+<img width="240" alt="image" src="https://user-images.githubusercontent.com/77183284/231870200-dfe05d86-a441-453b-818e-b3485a5e0e8c.png">
+
+To stop nginx(ie. to stop default web port 80)
 
 ```
 sudo nginx -s stop
 ```
 
-Start nginx
+To start nginx
 
 ```
 sudo nginx
