@@ -36,3 +36,20 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install 16
 node -e "console.log('Running Node.js ' + process.version)"
 ```
+
+### Install git
+
+```
+sudo yum install git
+```
+### Setup sshkey for ec2
+
+```
+ssh-keygen -t rsa -C "your-email@gmail.com"
+```
+
+Then
+
+```
+cat ~/.ssh/id_rsa.pub
+```
