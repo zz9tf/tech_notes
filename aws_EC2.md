@@ -3,9 +3,11 @@
 
 ## Install
 
-### Install docker and docker compose
+### Install docker
 ```
-sudo yum install docker
+sudo yum install docker -y
+```
+### Install docker compose
 
 From [link](https://stackoverflow.com/questions/63708035/installing-docker-compose-on-amazon-ec2-linux-2-9kb-docker-compose-file)
 ```
