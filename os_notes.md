@@ -1,18 +1,7 @@
 # Review list
 
 Conception bullet points:
- - [x] Memory manager
-    - Address Mapping
-    - Logical Addresses
-    - Physical Addresses
-    - Memory Allocation
-      - Contiguous
-        - Fixed
-        - Variable
-      - Non-Contiguous
-        - Paging
-        - Segmentation
-        - Paged Segmentation
+ - [x] Memory Management: Address Mapping, Logical Addresses, Physical Addresses, Memory Allocation, Contiguous (Fixed, Variable), Non-Contiguous (Paging, Segmentation, Paged Segmentation)
  
 - [x] Visual memory
    - Swapping vs. Demand Paging
@@ -28,56 +17,60 @@ Conception bullet points:
 
 -------
 
-## Memory Management Concepts
+## Memory Management
 
-### Address Mapping
+1. **Address Mapping**: Address mapping is the process of translating logical addresses into physical addresses used in MAR. Generated at runtime (execution time) by memory management unit (MMU) of CPU. This protocol enables dynamic program relocation without having to modify program code.
 
-Address mapping is the process of translating logical addresses into physical addresses. Logical addresses are the addresses that a program uses, which are typically contiguous and start at zero. Physical addresses are the addresses that correspond to locations in memory, which may be different from the logical addresses due to address mapping.
+<img width="489" alt="image" src="https://user-images.githubusercontent.com/77183284/235819131-58b408e6-8872-4cac-aabd-d1eca2d70f95.png">
 
-### Logical Addresses
+2. **Logical Addresses**: Logical addresses are an Abstraction of Memory, which must be mapped to physical addresses. "Placeholder" addresses which need to be adjusted before they can be used. 
 
-Logical addresses are the addresses that a program uses, which are typically contiguous and start at zero. They are virtual addresses that are used by the program and do not necessarily correspond to physical addresses.
+     PS: Logical address: contains two parts.
+      
+      - p:	page number: index into page table which contains base address of corresponding frame
+      - d:	page offset:  added to base address to find location within page/frame
+      - s:	segment number：index into segment table which contains limit and base address of corresponding segment
+      - d:	segment offset
 
-### Physical Addresses
+<img width="586" alt="image" src="https://user-images.githubusercontent.com/77183284/235817911-591b5d4f-6e6f-43d6-9883-25a6eaec734d.png">
 
-Physical addresses are the addresses that correspond to locations in memory. They may be different from the logical addresses due to address mapping. Physical addresses are used by the hardware to access memory.
+3. **Physical Addresses**: Physical addresses are the addresses that correspond to locations in MRA.
 
-### Memory Allocation
+4. **Memory Allocation**: Memory allocation is responsible for allocating memory to processes
+   
+   a. **Contiguous**: Contiguous allocation of process P (no gaps)
+   
+   +: Easy implementation, Easy to conceptualize
+   
+   -: Poor memory utilization
 
-Memory allocation is the process of assigning memory to different programs or processes.
+      - **Fixed**: This policy divide memory a priori into fixed partitions
+        - **Allocation Policy**: choose partition (Ri) that is smallest but >= k (best-fit)
+        - **Utilization Issue**: internal fragmentation:  parts of allocated partition unused
+        <img width="670" alt="image" src="https://user-images.githubusercontent.com/77183284/235820224-9d718599-e4c7-4b83-87a7-0b31a034d824.png">
+      - **Variable**: Allocate memory chunks as needed. Different size chunks will be signed different size spaces
+        policy | explaination | + | -
+        -|-|-|-
+        Best-fit | choose hole that is smallest but ≥ k (B) +reserves big holes for big processes | reserves big holes for big processes | creates many external fragmentation
+        Worst-fit | choose largest hole (D) | creates relative even-sized holes, since they all become smaller | many of the holes unusable, with large holes become smaller
+        First-fit | choose first hole with size ≥ k (A) | |
+        Next-fit |  choose next hole with size ≥ k | easy to implement | best/worst fit hard to assess
 
-#### Contiguous
 
-Contiguous memory allocation is a technique where a program's memory is allocated in one contiguous block. There are two types of contiguous memory allocation:
+   b. **Non-Contiguous**: Non-Contiguous allocation of process P (with gaps)
 
-##### Fixed
+      - **Paging**: Paging is a non-contiguous memory allocation technique where memory is divided into fixed-size pages, and a program's pages can be allocated anywhere in memory.
 
-Fixed contiguous memory allocation is a type where a program is allocated a fixed block of memory that cannot be resized.
+      - **Segmentation**: Partitions of logical address space / physical memory are variable, not fixed. Partitions based on **conceptual divisions** rather then page size
 
-##### Variable
+      - **Paged Segmentation**: Paged segmentation is a combination of paging and segmentation, where memory is divided into segments, and each segment is further divided into pages.
 
-Variable contiguous memory allocation is a type where a program is allocated a block of memory that can be resized as needed.
-
-#### Non-Contiguous
-
-Non-contiguous memory allocation is a technique where a program's memory is scattered across different non-contiguous blocks of memory.
-
-##### Paging
-
-Paging is a non-contiguous memory allocation technique where memory is divided into fixed-size pages, and a program's pages can be allocated anywhere in memory.
-
-##### Segmentation
-
-Segmentation is a non-contiguous memory allocation technique where memory is divided into logical segments. Each segment is allocated separately to a program.
-
-##### Paged Segmentation
-
-Paged segmentation is a combination of paging and segmentation, where memory is divided into segments, and each segment is further divided into pages.```
+<img width="613" alt="image" src="https://user-images.githubusercontent.com/77183284/235818831-20f8b7cf-90f0-416f-8639-66e21a3176a7.png">
 
 --------
   
 
-
+## Virtual memory
 
 ### Swapping vs. Demand Paging
 - **Swapping:** An entire process is moved between main memory and secondary storage.
