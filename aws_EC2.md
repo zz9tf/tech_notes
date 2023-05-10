@@ -19,6 +19,8 @@ sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose version
+
+sudo service docker start
 ```
 
 You will get:
@@ -53,3 +55,7 @@ Then
 ```
 cat ~/.ssh/id_rsa.pub
 ```
+
+### Domain name
+
+from [link](https://www.youtube.com/watch?v=hRSj2n-XKGM)
