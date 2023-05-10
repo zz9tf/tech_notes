@@ -21,6 +21,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose version
 
 sudo service docker start
+
+sudo systemctl enable docker
 ```
 
 You will get:
