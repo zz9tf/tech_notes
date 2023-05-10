@@ -7,6 +7,10 @@
 
 ```
 sudo yum install docker -y
+
+sudo service docker start
+
+sudo systemctl enable docker
 ```
 
 ### Install docker compose
@@ -19,10 +23,6 @@ sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose version
-
-sudo service docker start
-
-sudo systemctl enable docker
 ```
 
 You will get:
